@@ -60,157 +60,135 @@
         
         <div class="flex items-center space-x-3 justify-center sm:justify-start">
           <img src="image/DEK.webp" alt="Logo Diệc Ngân" class="rounded-large w-[200px] h-[100px] object-cover">
-          <span class="text-heading text-4xl font-semibold whitespace-nowrap tracking-wider"> D I E C - N G A N </span>
+          <span class="text-heading text-3xl md:text-4xl font-semibold whitespace-nowrap tracking-wider"> D I E C - N G A N </span>
         </div>
 
         <ul class="flex flex-wrap items-center justify-center gap-3 text-sm font-semibold">
           <li><a href="BIA.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">BIA</a></li>
-          <li><a href="Myanlien.html" class="inline-block bg-[#ff33cc] text-white hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">MỲ ĂN LIỀN</a></li>
+          <li><a href="Myanlien.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">MỲ ĂN LIỀN</a></li>
           <li><a href="NUOCNGOT.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">NƯỚC NGỌT</a></li>
           <li><a href="Suatuoi.html" class="inline-block bg-white/40 text-heading transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-md">SỮA TƯƠI</a></li>
-          <li><a href="BimBim.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">BIM BIM</a></li>
+          <li><a href="BimBim.html" class="inline-block bg-[#ff33cc] text-white hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">BIM BIM</a></li>
         </ul>
       </div>
     </div>
   </header>
 
-  <div class="max-w-screen-2xl mx-auto p-4 md:p-8">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+  <main class="max-w-screen-2xl mx-auto p-4 md:p-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/haohao_minihandy.png" alt="Mì hảo hảo" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Hảo Hảo Minihandy</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">18.000 VND</p>
+          <img src="image/Snack_poca_muc.png" alt="Snack Poca Mực" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Poca Mực lăn muối ớt</h3>
+          <p class="text-center text-orange-600 font-bold my-1">12.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Hảo Hảo Minihandy', 18000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Poca Mực lăn muối ớt', 12000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/mi_jin.png" alt="Mì Jin" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Jin</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">25.000 VND</p>
+          <img src="image/Snack_poca_ga_quay.png" alt="Snack Poca Gà Quay" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Poca gà quay da giòn</h3>
+          <p class="text-center text-orange-600 font-bold my-1">12.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Jin', 25000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-      
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/mi_mama.png" alt="Mì Mama" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Mama</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">25.000 VND</p>
-        </div>
-        <button onclick="addToCart('Mì Mama', 25000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Poca gà quay da giòn', 12000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/mi_mini.png" alt="Mì mini" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Mini</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">16.000 VND</p>
+          <img src="image/Snack_Poca_Bo_Luc.png" alt="Snack Poca Bò Lúc Lắc" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Poca bò lúc lắc</h3>
+          <p class="text-center text-orange-600 font-bold my-1">12.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Mini', 16000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Poca bò lúc lắc', 12000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/mi_nguqua.png" alt="Mì ngũ quả" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Ngũ Quả</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">20.000 VND</p>
+          <img src="image/Snack_lays_wavy.png" alt="Snack Lays Wavy" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays wavy</h3>
+          <p class="text-center text-orange-600 font-bold my-1">22.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Ngũ Quả', 20000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Lays wavy', 22000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/mi_Omachi_chuacay.png" alt="Mì Omachi chua cay" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Omachi Chua Cay</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">25.000 VND</p>
+          <img src="image/Snack_lays_classic.png" alt="Snack Lays Classic" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays classic</h3>
+          <p class="text-center text-orange-600 font-bold my-1">23.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Omachi Chua Cay', 25000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Lays classic', 23000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/mi_omachi.png" alt="Mì Omachi" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Omachi</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">18.000 VND</p>
+          <img src="image/Snack_Lays_tom.png" alt="Snack Lays Tôm" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays Tôm càng đút lò phô mai</h3>
+          <p class="text-center text-orange-600 font-bold my-1">22.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Omachi', 18000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Lays Tôm càng đút lò phô mai', 22000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/mi_suon_ham.png" alt="Mì sườn hầm" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Sườn Hầm</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">10.000 VND</p>
+          <img src="image/Snack_Lays_BBQ.png" alt="Snack Lays BBQ" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays BBQ</h3>
+          <p class="text-center text-orange-600 font-bold my-1">22.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Sườn Hầm', 10000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Lays BBQ', 22000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/mi_tom_chuacay.png" alt="Mì Omachi tôm chua cay" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Omachi Tôm Chua Cay</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">18.000 VND</p>
+          <img src="image/Snack_Cheddar.png" alt="Snack Lays Cheddar" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays Cheddar</h3>
+          <p class="text-center text-orange-600 font-bold my-1">22.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Omachi Tôm Chua Cay', 18000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Lays Cheddar', 22000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/mi_tomyum.png" alt="Mì Tomyum" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Tomyum</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">18.000 VND</p>
+          <img src="image/Snack_Lays_Max.png" alt="Snack Lays Max" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays Max bò wagyu</h3>
+          <p class="text-center text-orange-600 font-bold my-1">23.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Tomyum', 18000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Lays Max bò wagyu', 23000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
       <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
         <div>
-          <img src="image/mi.png" alt="Mì Omachi đặc biệt" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Omachi Cao Cấp</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">18.000 VND</p>
+          <img src="image/Snack_Dorritos_Taco.png" alt="Snack Doritos Taco" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Dorritos Taco</h3>
+          <p class="text-center text-orange-600 font-bold my-1">25.000 VND</p>
         </div>
-        <button onclick="addToCart('Mì Omachi Cao Cấp', 18000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/mi_bo_ham.png" alt="Mì Bò hầm" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-lg">Mì Bò Hầm</h3>
-          <p class="text-center text-orange-600 font-bold my-1 text-lg">18.000 VND</p>
-        </div>
-        <button onclick="addToCart('Mì Bò Hầm', 18000)" class="mt-3 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+        <button onclick="addToCart('Snack Dorritos Taco', 25000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
           <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
         </button>
       </div>
 
     </div>
-  </div>
+  </main>
 
   <footer class="bg-neutral-primary-soft rounded-base shadow-xs border border-default m-4">
     <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
@@ -228,21 +206,24 @@
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
   <script>
+    // Mảng lưu trữ sản phẩm được chọn
     let cart = [];
 
     function addToCart(name, price) {
+      // Tìm xem sản phẩm đã có trong giỏ hàng chưa
       const existingItem = cart.find(item => item.name === name);
+      
       if (existingItem) {
         existingItem.quantity += 1;
       } else {
         cart.push({ name: name, price: price, quantity: 1 });
       }
 
-      // Cập nhật số hiển thị trên icon giỏ hàng
+      // Tính tổng số lượng hàng và cập nhật lên icon giỏ hàng
       let totalCount = cart.reduce((total, item) => total + item.quantity, 0);
       document.getElementById('cart-count').innerText = totalCount;
 
-      // Tạo hiệu ứng lắc nhẹ quả cầu giỏ hàng
+      // Tạo hiệu ứng rung giật cho quả cầu giỏ hàng
       const cartIcon = document.getElementById('cart-icon');
       cartIcon.classList.add('shake');
       setTimeout(() => {
@@ -251,7 +232,7 @@
     }
 
     function viewCart() {
-      if(cart.length === 0) {
+      if (cart.length === 0) {
         alert("Giỏ hàng của bạn đang trống!");
         return;
       }

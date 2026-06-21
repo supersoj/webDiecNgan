@@ -6,6 +6,7 @@
   <title>Tạp Hóa Diệc Ngân - Sản Phẩm</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <script>
     tailwind.config = {
@@ -27,16 +28,33 @@
             'default-medium': '#d1d5db',
           },
           borderRadius: {
-            base: '0.5rem', // Bo góc 8px theo config của bạn
-            'large': '15px' // Thêm cấu hình bo góc 15px cho ảnh lớn
+            base: '0.5rem',
+            'large': '15px'
           }
         }
       }
     }
   </script>
+  <style>
+    /* Hiệu ứng rung nhẹ cho nút giỏ hàng khi thêm đồ */
+    @keyframes shake {
+        0% { transform: scale(1.1) rotate(0deg); }
+        25% { transform: scale(1.1) rotate(-15deg); }
+        50% { transform: scale(1.1) rotate(15deg); }
+        75% { transform: scale(1.1) rotate(-10deg); }
+        100% { transform: scale(1.1) rotate(0deg); }
+    }
+    .shake { animation: shake 0.4s ease-in-out; }
+  </style>
 </head>
+<body class="bg-gray-50 font-sans antialiased">
 
-<footer class="bg-[#00CCFF] text-amber-950 rounded-base shadow-xs border border-[#eaddc1] m-4">
+  <div id="cart-icon" onclick="viewCart()" class="fixed top-6 right-6 bg-orange-600 text-white p-4 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform z-50">
+    <i class="fas fa-shopping-cart text-2xl"></i>
+    <div id="cart-count" class="absolute -top-1 -right-1 bg-white text-orange-600 text-xs font-bold border-2 border-orange-600 rounded-full w-5 h-5 flex items-center justify-center">0</div>
+  </div>
+
+  <header class="bg-[#00CCFF] text-amber-950 rounded-base shadow-sm border border-[#eaddc1] m-4">
     <div class="w-full max-w-screen-2xl mx-auto p-4 md:py-6">
       <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         
@@ -46,214 +64,206 @@
         </div>
 
         <ul class="flex flex-wrap items-center justify-center gap-3 text-sm font-semibold">
-          <li>
-            <a href="BIA.html" class="inline-block bg-[#ff33cc] text-white hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">BIA</a>
-          </li>
-          <li>
-            <a href="Myanlien.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">MỲ ĂN LIỀN</a>
-          </li>
-          <li>
-            <a href="NUOCNGOT.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">NƯỚC NGỌT</a>
-          </li>
-          <li>
-            <a href="Suatuoi.html" class="inline-block bg-white/40 text-heading transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-md">SỮA TƯƠI</a>
-          </li>
+          <li><a href="BIA.html" class="inline-block bg-[#ff33cc] text-white hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">BIA</a></li>
+          <li><a href="Myanlien.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">MỲ ĂN LIỀN</a></li>
+          <li><a href="NUOCNGOT.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">NƯỚC NGỌT</a></li>
+          <li><a href="Suatuoi.html" class="inline-block bg-white/40 text-heading transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-md">SỮA TƯƠI</a></li>
+          <li><a href="BimBim.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">BIM BIM</a></li>
         </ul>
       </div>
     </div>
+  </header>
+
+  <main class="max-w-screen-2xl mx-auto p-4 md:p-8">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_333.png" alt="Bia 333" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia 333</h3>
+          <p class="text-center text-orange-600 font-bold my-1">15.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia 333', 15000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_blanc.png" alt="Bia Blanc" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Blanc</h3>
+          <p class="text-center text-orange-600 font-bold my-1">24.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Blanc', 24000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_budweiser.png" alt="Bia Budweiser" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Budweiser</h3>
+          <p class="text-center text-orange-600 font-bold my-1">17.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Budweiser', 17000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_geogaarden_white.png" alt="Bia Hoegaarden" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Hoegaarden</h3>
+          <p class="text-center text-orange-600 font-bold my-1">22.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Hoegaarden', 22000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_hene_sleek.png" alt="Bia Heineken Sleek" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Heineken Sleek</h3>
+          <p class="text-center text-orange-600 font-bold my-1">25.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Heineken Sleek', 25000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_huda.png" alt="Bia Huda" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Huda</h3>
+          <p class="text-center text-orange-600 font-bold my-1">16.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Huda', 16000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_jasmine_ipa.png" alt="Bia Jasmine" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Jasmine</h3>
+          <p class="text-center text-orange-600 font-bold my-1">54.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Jasmine', 54000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_passion_fruit_wheat.png" alt="Bia Passion Fruit" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Passion Fruit</h3>
+          <p class="text-center text-orange-600 font-bold my-1">54.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Passion Fruit', 54000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_pilsner.png" alt="Bia Pilsner" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Pilsner</h3>
+          <p class="text-center text-orange-600 font-bold my-1">26.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Pilsner', 26000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_saigon.png" alt="Bia Saigon" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Saigon</h3>
+          <p class="text-center text-orange-600 font-bold my-1">20.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Saigon', 20000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/bia_tiger crystal.png" alt="Bia Tiger Crystal" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Tiger Crystal</h3>
+          <p class="text-center text-orange-600 font-bold my-1">23.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Tiger Crystal', 23000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
+        <div>
+          <img src="image/hene.png" alt="Bia Heineken" class="w-full h-auto object-contain rounded-lg">
+          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Bia Heineken</h3>
+          <p class="text-center text-orange-600 font-bold my-1">20.000 VND</p>
+        </div>
+        <button onclick="addToCart('Bia Heineken', 20000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
+          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="bg-neutral-primary-soft rounded-base shadow-xs border border-default m-4">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-body sm:text-center">© 2026 TẠP HÓA DIỆC NGÂN</span>
+      <ul class="flex flex-wrap items-center justify-center sm:justify-start gap-6 md:gap-10 mt-4 md:mt-0 text-sm font-semibold">
+        <li><a href="BIA.html" class="text-heading hover:text-brand transition-colors text-xl font-semibold">BIA</a></li>
+        <li><a href="Myanlien.html" class="text-heading hover:text-brand transition-colors text-xl font-semibold">MỲ ĂN LIỀN</a></li>
+        <li><a href="NUOCNGOT.html" class="text-heading hover:text-brand transition-colors text-xl font-semibold">NƯỚC NGỌT</a></li>
+        <li><a href="Suatuoi.html" class="text-heading hover:text-brand transition-colors text-xl font-semibold">SỮA TƯƠI</a></li>
+        <li><a href="BimBim.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-lg font-bold px-4 py-1.5 rounded-full shadow-sm">BIM BIM</a></li>
+      </ul>
+    </div>
   </footer>
 
-
-<body class="bg-gray-50">
-
-  
-  <div class="max-w-screen-2xl mx-auto p-8">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      
-<figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_333.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia 333: 15.000 VND
-        </figcaption>
-      </figure>
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_blanc.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia blanc: 24.000 VND
-        </figcaption>
-      </figure>
-     <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_budweiser.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Budweiser: 17.000 VND
-        </figcaption>
-      </figure>
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_geogaarden_white.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Hoegaarden: 22.000 VND
-        </figcaption>
-      </figure>
-
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_hene_sleek.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Heineken sleek: 25.000 VND
-        </figcaption>
-      </figure>
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_huda.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Huda: 16.000 VND
-        </figcaption>
-      </figure>
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_jasmine_ipa.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Jasmine: 54.000 VND
-        </figcaption>
-      </figure>
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_passion_fruit_wheat.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Passion Fruit: 54.000 VND
-        </figcaption>
-      </figure>
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_pilsner.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Pilsner: 26.000 VND
-        </figcaption>
-      </figure>
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_saigon.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Saigon: 20.000 VND
-        </figcaption>
-      </figure>
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/bia_tiger crystal.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Tiger crystal: 23.000 VND
-        </figcaption>
-      </figure>
-
-      <figure style="margin: 0; background-color: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <img src="image/hene.png" alt="Bia Pilsner" style="width: 100%; display: block; height: auto;">
-        <figcaption style="
-            display: block;
-            text-align: center;
-            padding-top: 12px;
-            font-size: 14px;
-            color: #333;
-            font-weight: 500;">
-          Bia Heineken : 20.000 VND
-        </figcaption>
-      </figure>
-      
-    </div>
-  </div>
-
-  
-  
-
-<footer class="bg-neutral-primary-soft rounded-base shadow-xs border border-default m-4">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-body sm:text-center"><a href="https://flowbite.com/" class="hover:underline"></a>TAPH HÓA DIỆC NGÂN
-    </span>
-    <ul class="flex flex-wrap items-center justify-center sm:justify-start gap-6 md:gap-10 mb-10 text-sm font-semibold sm:mb-2">
-  <li>
-    <a href="BIA.html" class="text-heading hover:text-brand transition-colors text-2xl font-semibold whitespace-nowrap">BIA</a>
-  </li>
-  <li>
-    <a href="Myanlien.html" class="text-heading hover:text-brand transition-colors text-2xl font-semibold whitespace-nowrap">MỲ ĂN LIỀN</a>
-  </li>
-  <li>
-    <a href="NUOCNGOT.html" class="text-heading hover:text-brand transition-colors text-2xl font-semibold whitespace-nowrap">NƯỚC NGỌT</a>
-  </li>
-  <li>
-    <a href="Suatuoi.html" class="text-heading hover:text-brand transition-colors text-2xl font-semibold whitespace-nowrap">SỮA TƯƠI</a>
-  </li>
-</ul>
-    </div>
-</footer>
-
-
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name: name, price: price, quantity: 1 });
+      }
+
+      // Cập nhật số hiển thị trên icon giỏ hàng
+      let totalCount = cart.reduce((total, item) => total + item.quantity, 0);
+      document.getElementById('cart-count').innerText = totalCount;
+
+      // Tạo hiệu ứng lắc nhẹ quả cầu giỏ hàng
+      const cartIcon = document.getElementById('cart-icon');
+      cartIcon.classList.add('shake');
+      setTimeout(() => {
+        cartIcon.classList.remove('shake');
+      }, 400);
+    }
+
+    function viewCart() {
+      if(cart.length === 0) {
+        alert("Giỏ hàng của bạn đang trống!");
+        return;
+      }
+      let list = "Giỏ hàng của bạn:\n\n";
+      let totalMoney = 0;
+      cart.forEach(item => {
+        list += `- ${item.name} x${item.quantity} : ${(item.price * item.quantity).toLocaleString('vi-VN')} VND\n`;
+        totalMoney += item.price * item.quantity;
+      });
+      list += `\nTổng tiền: ${totalMoney.toLocaleString('vi-VN')} VND`;
+      alert(list);
+    }
+  </script>
 </body>
 </html>
