@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạp Hóa Diệc Ngân - Liên Hệ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { heading: '#111827', body: '#4b5563', brand: '#1a56db' },
+          borderRadius: { base: '0.5rem', 'large': '15px' }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+  <header class="bg-[#00CCFF] text-amber-950 rounded-base shadow-sm border border-[#eaddc1] m-4">
+    <div class="w-full max-w-screen-2xl mx-auto p-4 md:py-6">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex items-center space-x-3 justify-center sm:justify-start">
+          <img src="image/DEK.webp" alt="Logo Diệc Ngân" class="rounded-large w-[200px] h-[100px] object-cover">
+          <span class="text-heading text-4xl font-semibold whitespace-nowrap tracking-wider"> D I E C - N G A N </span>
+        </div>
+        <ul class="flex flex-wrap items-center justify-center gap-3 text-sm font-semibold">
+          <li><a href="BIA.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full">BIA</a></li>
+          <li><a href="Myanlien.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full">MỲ ĂN LIỀN</a></li>
+          <li><a href="index.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full">NƯỚC NGỌT</a></li>
+          <li><a href="Suatuoi.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full">SỮA TƯƠI</a></li>
+          <li><a href="BimBim.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full">BIM BIM</a></li>
+          <li><a href="CONTACT.html" class="inline-block bg-[#ff33cc] text-white transition-all text-xl font-bold px-6 py-2.5 rounded-full shadow-md">LIÊN HỆ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-xl mx-auto p-6 my-10 bg-white rounded-xl shadow-md border border-gray-100">
+     <div class="flex items-center mb-6 border-b pb-4">
+        <h5 class="text-2xl font-bold text-heading flex items-center gap-2">
+           <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+           Liên Hệ Với Chúng Tôi
+        </h5>
+     </div>
+     
+     <form action="#" class="space-y-4">
+        <div>
+           <label class="block mb-2 text-sm font-medium text-gray-700">Email của bạn <span class="text-red-500">*</span></label>
+           <input type="email" class="block w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="name@flowbite.com" required>
+        </div>
+        <div>
+           <label class="block mb-2 text-sm font-medium text-gray-700">Chủ đề <span class="text-red-500">*</span></label>
+           <input type="text" class="block w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="Chúng tôi có thể giúp gì cho bạn" required>
+        </div>
+        <div>
+           <label class="block mb-2 text-sm font-medium text-gray-700">Lời nhắn</label>
+           <textarea rows="4" class="block w-full border border-gray-300 rounded-lg p-2.5 focus:ring-blue-500 focus:border-blue-500 text-sm" placeholder="Viết ý kiến của bạn ở đây..."></textarea>
+        </div>
+        <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-3 transition-colors">Gửi lời nhắn</button>
+     </form>
+
+     <div class="mt-6 pt-6 border-t border-gray-100 text-sm text-gray-500 space-y-1">
+        <p>📧 Email: <a href="mailto:info@company.com" class="hover:underline text-blue-600">DiecNgan@gmail.com</a></p>
+        <p>📞 Điện thoại: <a href="tel:2124567890" class="hover:underline text-blue-600">0944409409</a></p>
+     </div>
+  </main>
+
+  <footer class="bg-gray-100 rounded-base border border-gray-200 m-4 p-4 text-center text-sm font-bold text-gray-600">
+    © 2026 TẠP HÓA DIỆC NGÂN
+  </footer>
+
+</body>
+</html>
