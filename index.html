@@ -27,13 +27,7 @@
 </head>
 <body class="bg-gray-100 min-h-screen flex flex-col justify-between font-sans antialiased">
 
-  <!-- Quay lại trang chủ -->
-  <div class="p-4">
-    <a href="index.html" class="inline-flex items-center gap-2 text-gray-600 hover:text-[#00CCFF] font-semibold transition-colors">
-      <i class="fas fa-arrow-left"></i> Quay lại trang chủ
-    </a>
-  </div>
-
+  
   <!-- Container Đăng Nhập -->
   <main class="w-full max-w-md mx-auto p-4 flex-1 flex items-center justify-center">
     <div class="bg-white w-full p-8 rounded-2xl shadow-md border border-gray-100">
@@ -152,6 +146,19 @@
     function loginSocial(platform) {
       alert('Đang kết nối cổng đăng nhập bằng ' + platform);
     }
+
+    // Xử lý khi nhấn nút Đăng nhập
+function handleLogin(event) {
+  event.preventDefault(); // Ngăn trang bị reload mặc định
+
+  const user = document.getElementById('username').value;
+  
+  // Bạn có thể xóa dòng alert này nếu muốn chuyển trang ngay lập tức mà không cần bấm OK
+  alert('Đăng nhập thành công! Chào mừng ' + user + ' quay trở lại.');
+
+  // Lệnh chuyển hướng sang trang bimbim.html
+  window.location.href = "bimbim.html"; 
+}
   </script>
 </body>
 </html>
