@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạp Hóa Diệc Ngân - Đăng Ký</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#1a56db',
+            heading: '#111827',
+            body: '#4b5563',
+          },
+          borderRadius: {
+            'large': '15px'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col justify-between font-sans antialiased">
+
+  <div class="p-4">
+    <a href="index.html" class="inline-flex items-center gap-2 text-gray-600 hover:text-[#00CCFF] font-semibold transition-colors">
+      <i class="fas fa-arrow-left"></i> Quay lại trang chủ
+    </a>
+  </div>
+
+  <main class="w-full max-w-md mx-auto p-4 flex-1 flex items-center justify-center">
+    <div class="bg-white w-full p-8 rounded-2xl shadow-md border border-gray-100">
+      
+      <div class="text-center mb-6">
+        <div class="flex justify-center mb-3">
+          <img src="image/DEK.webp" alt="Logo Diệc Ngân" class="rounded-large w-[140px] h-[70px] object-cover shadow-sm" onerror="this.src='https://via.placeholder.com/140x70?text=DIEC-NGAN'">
+        </div>
+        <h1 class="text-2xl font-bold text-heading">Tạo tài khoản mới</h1>
+        <p class="text-sm text-body mt-1">Tham gia cùng Diệc Ngân để nhận nhiều ưu đãi</p>
+      </div>
+
+      <form id="register-form" onsubmit="handleRegister(event)" class="space-y-4">
+        
+        <div>
+          <label for="fullname" class="block text-sm font-semibold text-gray-700 mb-1.5">Họ và tên</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+              <i class="fas fa-id-card text-sm"></i>
+            </div>
+            <input type="text" id="fullname" required placeholder="Nhập họ và tên của bạn" 
+              class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#00CCFF] focus:border-[#00CCFF] transition-all">
+          </div>
+        </div>
+
+        <div>
+          <label for="username" class="block text-sm font-semibold text-gray-700 mb-1.5">Email hoặc Số điện thoại</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+              <i class="fas fa-user text-sm"></i>
+            </div>
+            <input type="text" id="username" required placeholder="Nhập email hoặc SĐT" 
+              class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#00CCFF] focus:border-[#00CCFF] transition-all">
+          </div>
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-semibold text-gray-700 mb-1.5">Mật khẩu</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+              <i class="fas fa-lock text-sm"></i>
+            </div>
+            <input type="password" id="password" required placeholder="Tối thiểu 6 ký tự" 
+              class="w-full pl-10 pr-10 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#00CCFF] focus:border-[#00CCFF] transition-all">
+            <button type="button" onclick="togglePassword('password', 'toggle-icon-1')" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600">
+              <i id="toggle-icon-1" class="fas fa-eye text-sm"></i>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label for="confirm-password" class="block text-sm font-semibold text-gray-700 mb-1.5">Xác nhận mật khẩu</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+              <i class="fas fa-check-double text-sm"></i>
+            </div>
+            <input type="password" id="confirm-password" required placeholder="Nhập lại mật khẩu" 
+              class="w-full pl-10 pr-10 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#00CCFF] focus:border-[#00CCFF] transition-all">
+            <button type="button" onclick="togglePassword('confirm-password', 'toggle-icon-2')" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600">
+              <i id="toggle-icon-2" class="fas fa-eye text-sm"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-2 text-xs sm:text-sm pt-1">
+          <input type="checkbox" id="terms" required class="w-4 h-4 mt-0.5 rounded text-blue-600 focus:ring-blue-500 border-gray-300 cursor-pointer">
+          <label for="terms" class="text-gray-600 cursor-pointer select-none">
+            Tôi đồng ý với <a href="#" class="text-blue-600 hover:underline">Điều khoản dịch vụ</a> và <a href="#" class="text-blue-600 hover:underline">Chính sách bảo mật</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="w-full mt-2 py-3 bg-[#00CCFF] hover:bg-[#00bfff] text-heading font-bold rounded-xl shadow-sm hover:shadow transition-all flex items-center justify-center gap-2">
+          ĐĂNG KÝ NGAY <i class="fas fa-user-plus"></i>
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-gray-600 mt-6">
+        Bạn đã có tài khoản? <a href="index.html" class="text-blue-600 font-semibold hover:underline">Đăng nhập tại đây</a>
+      </p>
+
+    </div>
+  </main>
+
+  <footer class="py-4 text-center border-t border-gray-200 text-xs text-gray-400 bg-white">
+    © 2026 TẠP HÓA DIỆC NGÂN - GIAO DIỆN ĐĂNG KÝ
+  </footer>
+
+  <script>
+    // Hàm ẩn/hiện mật khẩu dùng chung cho cả 2 ô input
+    function togglePassword(inputId, iconId) {
+      const passwordInput = document.getElementById(inputId);
+      const toggleIcon = document.getElementById(iconId);
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+      } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+      }
+    }
+
+    // Xử lý kiểm tra và đăng ký tài khoản
+    function handleRegister(event) {
+      event.preventDefault();
+      
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      // Kiểm tra mật khẩu khớp nhau hay không
+      if (password !== confirmPassword) {
+        alert('Mật khẩu xác nhận không khớp! Vui lòng kiểm tra lại.');
+        return;
+      }
+
+      alert('Đăng ký tài khoản thành công! Hệ thống đang xử lý.');
+    }
+  </script>
+</body>
+</html>

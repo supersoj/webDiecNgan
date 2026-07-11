@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tạp Hóa Diệc Ngân - Sản Phẩm</title>
+  <title>Tạp Hóa Diệc Ngân - Đăng Nhập</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,238 +14,143 @@
         extend: {
           colors: {
             brand: '#1a56db',
-            'fg-brand': '#1e429f',
-            'neutral-primary': '#ffffff',
-            'neutral-primary-medium': '#f9fafb',
-            'neutral-secondary-soft': '#f3f4f6',
-            'neutral-tertiary': '#e5e7eb',
-            'neutral-tertiary-medium': '#d1d5db',
             heading: '#111827',
             body: '#4b5563',
           },
-          borderColor: {
-            default: '#e5e7eb',
-            'default-medium': '#d1d5db',
-          },
           borderRadius: {
-            base: '0.5rem',
             'large': '15px'
           }
         }
       }
     }
   </script>
-  <style>
-    /* Hiệu ứng rung nhẹ cho nút giỏ hàng khi thêm đồ */
-    @keyframes shake {
-        0% { transform: scale(1.1) rotate(0deg); }
-        25% { transform: scale(1.1) rotate(-15deg); }
-        50% { transform: scale(1.1) rotate(15deg); }
-        75% { transform: scale(1.1) rotate(-10deg); }
-        100% { transform: scale(1.1) rotate(0deg); }
-    }
-    .shake { animation: shake 0.4s ease-in-out; }
-  </style>
 </head>
-<body class="bg-gray-50 font-sans antialiased">
+<body class="bg-gray-100 min-h-screen flex flex-col justify-between font-sans antialiased">
 
-  <div id="cart-icon" onclick="viewCart()" class="fixed top-6 right-6 bg-orange-600 text-white p-4 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform z-50">
-    <i class="fas fa-shopping-cart text-2xl"></i>
-    <div id="cart-count" class="absolute -top-1 -right-1 bg-white text-orange-600 text-xs font-bold border-2 border-orange-600 rounded-full w-5 h-5 flex items-center justify-center">0</div>
+  <!-- Quay lại trang chủ -->
+  <div class="p-4">
+    <a href="index.html" class="inline-flex items-center gap-2 text-gray-600 hover:text-[#00CCFF] font-semibold transition-colors">
+      <i class="fas fa-arrow-left"></i> Quay lại trang chủ
+    </a>
   </div>
 
-  <header class="bg-[#00CCFF] text-amber-950 rounded-base shadow-sm border border-[#eaddc1] m-4">
-    <div class="w-full max-w-screen-2xl mx-auto p-4 md:py-6">
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
-        
-        <div class="flex items-center space-x-3 justify-center sm:justify-start">
-          <img src="image/DEK.webp" alt="Logo Diệc Ngân" class="rounded-large w-[200px] h-[100px] object-cover">
-          <span class="text-heading text-3xl md:text-4xl font-semibold whitespace-nowrap tracking-wider"> D I E C - N G A N </span>
-        </div>
-
-        <ul class="flex flex-wrap items-center justify-center gap-3 text-sm font-semibold">
-          <li><a href="BIA.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">BIA</a></li>
-          <li><a href="Myanlien.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">MỲ ĂN LIỀN</a></li>
-          <li><a href="NUOCNGOT.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">NƯỚC NGỌT</a></li>
-          <li><a href="Suatuoi.html" class="inline-block bg-white/40 text-heading transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-md">SỮA TƯƠI</a></li>
-          <li><a href="index.html" class="inline-block bg-[#ff33cc] text-white hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full whitespace-nowrap shadow-sm">BIM BIM</a></li>
-          <li><a href="contacttest.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full">LIÊN HỆ</a></li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <main class="max-w-screen-2xl mx-auto p-4 md:p-8">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <!-- Container Đăng Nhập -->
+  <main class="w-full max-w-md mx-auto p-4 flex-1 flex items-center justify-center">
+    <div class="bg-white w-full p-8 rounded-2xl shadow-md border border-gray-100">
       
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_poca_muc.png" alt="Snack Poca Mực" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Poca Mực lăn muối ớt</h3>
-          <p class="text-center text-orange-600 font-bold my-1">12.000 VND</p>
+      <!-- Logo và Tiêu đề -->
+      <div class="text-center mb-8">
+        <div class="flex justify-center mb-3">
+          <img src="image/DEK.webp" alt="Logo Diệc Ngân" class="rounded-large w-[140px] h-[70px] object-cover shadow-sm" onerror="this.src='https://via.placeholder.com/140x70?text=DIEC-NGAN'">
         </div>
-        <button onclick="addToCart('Snack Poca Mực lăn muối ớt', 12000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+        <h1 class="text-2xl font-bold text-heading">Chào mừng bạn trở lại!</h1>
+        <p class="text-sm text-body mt-1">Đăng nhập để trải nghiệm mua sắm tuyệt vời hơn</p>
+      </div>
+
+      <!-- Form Đăng Nhập -->
+      <form id="login-form" onsubmit="handleLogin(event)" class="space-y-5">
+        
+        <!-- Tài khoản -->
+        <div>
+          <label for="username" class="block text-sm font-semibold text-gray-700 mb-1.5">Email hoặc Số điện thoại</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+              <i class="fas fa-user text-sm"></i>
+            </div>
+            <input type="text" id="username" required placeholder="Nhập email hoặc SĐT của bạn" 
+              class="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#00CCFF] focus:border-[#00CCFF] transition-all">
+          </div>
+        </div>
+
+        <!-- Mật khẩu -->
+        <div>
+          <label for="password" class="block text-sm font-semibold text-gray-700 mb-1.5">Mật khẩu</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400">
+              <i class="fas fa-lock text-sm"></i>
+            </div>
+            <input type="password" id="password" required placeholder="••••••••" 
+              class="w-full pl-10 pr-10 py-2.5 bg-gray-50 border border-gray-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#00CCFF] focus:border-[#00CCFF] transition-all">
+            <!-- Nút ẩn hiện mật khẩu -->
+            <button type="button" onclick="togglePasswordVisibility()" class="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600">
+              <i id="password-toggle-icon" class="fas fa-eye text-sm"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Ghi nhớ & Quên mật khẩu -->
+        <div class="flex items-center justify-between text-xs sm:text-sm">
+          <label class="flex items-center gap-2 text-gray-600 cursor-pointer select-none">
+            <input type="checkbox" class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500 border-gray-300">
+            Nhớ đăng nhập
+          </label>
+          <a href="#" class="text-orange-600 font-medium hover:underline">Quên mật khẩu?</a>
+        </div>
+
+        <!-- Nút Đăng Nhập Chính -->
+        <button type="submit" class="w-full py-3 bg-[#00CCFF] hover:bg-[#00bfff] text-heading font-bold rounded-xl shadow-sm hover:shadow transition-all flex items-center justify-center gap-2">
+          ĐĂNG NHẬP <i class="fas fa-sign-in-alt"></i>
+        </button>
+      </form>
+
+      <!-- Hoặc Đăng Nhập Bằng Cách Khác -->
+      <div class="my-6 flex items-center justify-between">
+        <span class="border-b w-1/5 border-gray-200"></span>
+        <span class="text-xs text-gray-400 uppercase font-medium">Hoặc đăng nhập bằng</span>
+        <span class="border-b w-1/5 border-gray-200"></span>
+      </div>
+
+      <!-- Các nút MXH -->
+      <div class="grid grid-cols-2 gap-3">
+        <button onclick="loginSocial('Google')" class="flex items-center justify-center gap-2 py-2.5 border border-gray-300 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="w-4 h-4"> Google
+        </button>
+        <button onclick="loginSocial('Facebook')" class="flex items-center justify-center gap-2 py-2.5 border border-gray-300 rounded-xl text-sm font-medium hover:bg-gray-50 transition-colors">
+          <i class="fab fa-facebook text-blue-600 text-base"></i> Facebook
         </button>
       </div>
 
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_poca_ga_quay.png" alt="Snack Poca Gà Quay" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Poca gà quay da giòn</h3>
-          <p class="text-center text-orange-600 font-bold my-1">12.000 VND</p>
-        </div>
-        <button onclick="addToCart('Snack Poca gà quay da giòn', 12000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_Poca_Bo_Luc.png" alt="Snack Poca Bò Lúc Lắc" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Poca bò lúc lắc</h3>
-          <p class="text-center text-orange-600 font-bold my-1">12.000 VND</p>
-        </div>
-        <button onclick="addToCart('Snack Poca bò lúc lắc', 12000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_lays_wavy.png" alt="Snack Lays Wavy" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays wavy</h3>
-          <p class="text-center text-orange-600 font-bold my-1">22.000 VND</p>
-        </div>
-        <button onclick="addToCart('Snack Lays wavy', 22000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_lays_classic.png" alt="Snack Lays Classic" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays classic</h3>
-          <p class="text-center text-orange-600 font-bold my-1">23.000 VND</p>
-        </div>
-        <button onclick="addToCart('Snack Lays classic', 23000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_Lays_tom.png" alt="Snack Lays Tôm" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays Tôm càng đút lò phô mai</h3>
-          <p class="text-center text-orange-600 font-bold my-1">22.000 VND</p>
-        </div>
-        <button onclick="addToCart('Snack Lays Tôm càng đút lò phô mai', 22000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_Lays_BBQ.png" alt="Snack Lays BBQ" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays BBQ</h3>
-          <p class="text-center text-orange-600 font-bold my-1">22.000 VND</p>
-        </div>
-        <button onclick="addToCart('Snack Lays BBQ', 22000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_Cheddar.png" alt="Snack Lays Cheddar" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays Cheddar</h3>
-          <p class="text-center text-orange-600 font-bold my-1">22.000 VND</p>
-        </div>
-        <button onclick="addToCart('Snack Lays Cheddar', 22000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_Lays_Max.png" alt="Snack Lays Max" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Lays Max bò wagyu</h3>
-          <p class="text-center text-orange-600 font-bold my-1">23.000 VND</p>
-        </div>
-        <button onclick="addToCart('Snack Lays Max bò wagyu', 23000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
-
-      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 flex flex-col justify-between">
-        <div>
-          <img src="image/Snack_Dorritos_Taco.png" alt="Snack Doritos Taco" class="w-full h-auto object-contain rounded-lg">
-          <h3 class="text-center font-semibold text-gray-800 mt-3 text-base">Snack Dorritos Taco</h3>
-          <p class="text-center text-orange-600 font-bold my-1">25.000 VND</p>
-        </div>
-        <button onclick="addToCart('Snack Dorritos Taco', 25000)" class="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm">
-          <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
-        </button>
-      </div>
+      <!-- Chưa có tài khoản -->
+      <p class="text-center text-sm text-gray-600 mt-8">
+        Bạn chưa có tài khoản? <a href="dangky.html" class="text-blue-600 font-semibold hover:underline">Đăng ký ngay</a>
+      </p>
 
     </div>
   </main>
 
-  <footer class="bg-neutral-primary-soft rounded-base shadow-xs border border-default m-4">
-    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-body sm:text-center">© 2026 TẠP HÓA DIỆC NGÂN</span>
-      <ul class="flex flex-wrap items-center justify-center sm:justify-start gap-6 md:gap-10 mt-4 md:mt-0 text-sm font-semibold">
-        <li><a href="BIA.html" class="text-heading hover:text-brand transition-colors text-xl font-semibold">BIA</a></li>
-        <li><a href="Myanlien.html" class="text-heading hover:text-brand transition-colors text-xl font-semibold">MỲ ĂN LIỀN</a></li>
-        <li><a href="NUOCNGOT.html" class="text-heading hover:text-brand transition-colors text-xl font-semibold">NƯỚC NGỌT</a></li>
-        <li><a href="Suatuoi.html" class="text-heading hover:text-brand transition-colors text-xl font-semibold">SỮA TƯƠI</a></li>
-        <li><a href="index.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-lg font-bold px-4 py-1.5 rounded-full shadow-sm">BIM BIM</a></li>
-        <li><a href="contacttest.html" class="inline-block bg-white/40 text-heading hover:bg-white/70 transition-all text-xl font-bold px-6 py-2.5 rounded-full">LIÊN HỆ</a></li>
-      </ul>
-    </div>
+  <!-- Footer thu gọn -->
+  <footer class="py-4 text-center border-t border-gray-200 text-xs text-gray-400 bg-white">
+    © 2026 TẠP HÓA DIỆC NGÂN - GIAO DIỆN ĐĂNG NHẬP
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-
   <script>
-    // Mảng lưu trữ sản phẩm được chọn
-    let cart = [];
-
-    function addToCart(name, price) {
-      // Tìm xem sản phẩm đã có trong giỏ hàng chưa
-      const existingItem = cart.find(item => item.name === name);
+    // Hàm ẩn/hiện mật khẩu
+    function togglePasswordVisibility() {
+      const passwordInput = document.getElementById('password');
+      const toggleIcon = document.getElementById('password-toggle-icon');
       
-      if (existingItem) {
-        existingItem.quantity += 1;
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
       } else {
-        cart.push({ name: name, price: price, quantity: 1 });
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
       }
-
-      // Tính tổng số lượng hàng và cập nhật lên icon giỏ hàng
-      let totalCount = cart.reduce((total, item) => total + item.quantity, 0);
-      document.getElementById('cart-count').innerText = totalCount;
-
-      // Tạo hiệu ứng rung giật cho quả cầu giỏ hàng
-      const cartIcon = document.getElementById('cart-icon');
-      cartIcon.classList.add('shake');
-      setTimeout(() => {
-        cartIcon.classList.remove('shake');
-      }, 400);
     }
 
-    function viewCart() {
-      if (cart.length === 0) {
-        alert("Giỏ hàng của bạn đang trống!");
-        return;
-      }
-      let list = "Giỏ hàng của bạn:\n\n";
-      let totalMoney = 0;
-      cart.forEach(item => {
-        list += `- ${item.name} x${item.quantity} : ${(item.price * item.quantity).toLocaleString('vi-VN')} VND\n`;
-        totalMoney += item.price * item.quantity;
-      });
-      list += `\nTổng tiền: ${totalMoney.toLocaleString('vi-VN')} VND`;
-      alert(list);
+    // Xử lý khi nhấn nút Đăng nhập
+    function handleLogin(event) {
+      event.preventDefault(); // Ngăn trang bị reload
+      const user = document.getElementById('username').value;
+      alert('Đang xử lý đăng nhập cho tài khoản: ' + user);
+      // Khi có server, bạn sẽ xử lý gọi API kiểm tra ở đây
+    }
+
+    // Mô phỏng đăng nhập MXH
+    function loginSocial(platform) {
+      alert('Đang kết nối cổng đăng nhập bằng ' + platform);
     }
   </script>
 </body>
